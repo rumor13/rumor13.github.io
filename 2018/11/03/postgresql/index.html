@@ -22,7 +22,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/archives/2018/">
+    <link rel="canonical" href="http://yoursite.com/2018/11/03/postgresql/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost="true" data-istags="false
 " data-ishome="false">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -116,153 +116,119 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src="">
-                        <h5><a href="/about/">rumor</a></h5>
-                        <p></p>
+
+<img class="wechat-title-img" src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1></h1>
+                    
+                    <span class="meta">
+                         作者 rumor
+                        <span>
+                          日期 2018-11-03
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
                     </div>
                 </div>
             </div>
-        </header>
-    </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/03/postgresql/">
-        <h2 class="post-title">
-            未命名
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-03
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                PostgreSQL
-https://www.postgresql.org/download/linux/redhat/
-123456~]# yum install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x8..
-            </p>
         </div>
-    </a>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            
+        </span>
+    </div>
+</header>
 
-</div>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <p>PostgreSQL</p>
+<p><a href="https://www.postgresql.org/download/linux/redhat/" target="_blank" rel="noopener">https://www.postgresql.org/download/linux/redhat/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">~]# yum install https://download.postgresql.org/pub/repos/yum/11/redhat/rhel-7-x86_64/pgdg-centos11-11-2.noarch.rpm</span><br><span class="line">~]# yum install postgresql11</span><br><span class="line">~]# yum install postgresql11-server</span><br><span class="line">~]# /usr/pgsql-11/bin/postgresql-11-setup initdb</span><br><span class="line">~]# systemctl enable postgresql-11</span><br><span class="line">~]# systemctl start postgresql-11</span><br></pre></td></tr></table></figure>
+<p>切换到postgres用户执行数据库操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">~]# cat /etc/passwd #查看当前系统账号</span><br><span class="line">...</span><br><span class="line">postgres:x:26:26:PostgreSQL Server:/var/lib/pgsql:/bin/bash</span><br><span class="line">-bash-4.2$ createdb mydb #创建数据库，dropdb mydb #删除库</span><br></pre></td></tr></table></figure>
+<p>聚集函数</p>
+<p>一个行集合上计算count（计数）、sum（和）、avg（均值）、max（最大值）和min（最小值）的函数。</p>
+<p>GROUP BY 分组</p>
+<p><code>WHERE</code>和<code>HAVING</code>的基本区别如下：<code>WHERE</code>在分组和聚集计算之前选取输入行（因此，它控制哪些行进入聚集计算）， 而<code>HAVING</code>在分组和聚集之后选取分组行。因此，<code>WHERE</code>子句不能包含聚集函数； 因为试图用聚集函数判断哪些行应输入给聚集运算是没有意义的。相反，<code>HAVING</code>子句总是包含聚集函数（严格说来，你可以写不使用聚集的<code>HAVING</code>子句， 但这样做很少有用。同样的条件用在<code>WHERE</code>阶段会更有效）。</p>
 
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/03/hello-world-1/">
-        <h2 class="post-title">
-            hello world
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-03
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
+                <hr>
                 
-            </p>
-        </div>
-    </a>
 
-</div>
-
-<hr>
-
-
-
-<div class="post-preview " style="background-image: url('')">
-    <a href="/2018/11/03/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2018-11-03
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer i..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
+                <ul class="pager">
                     
-                    <h5><a href="/about/">rumor</a></h5>
                     
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
+                    <li class="next">
+                        <a href="/2018/11/03/hello-world-1/" data-toggle="tooltip" data-placement="top" title="hello world">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
 
-                        
+                
 
-                        
+                
 
-                        
 
-                        
-                    </ul>
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    
                 </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-
-            
-
+            </div>
         </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
     </div>
-</div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->
